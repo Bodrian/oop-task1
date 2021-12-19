@@ -98,6 +98,16 @@ class Reviewer(Mentor):
         else:
             return 'Ошибка'
 
+def srednee_student(students, courses):
+    grade = []
+    for stud in students:
+        for grad in stud.grades[courses]:
+          grade.append(grad)
+    srednee = sum(grade)/len(grade)
+    return srednee
+
+def srednee_lectors(lectors, courses):
+    pass
 
 
 best_student = Student('Ruoy', 'Eman', 'your_gender')
@@ -137,3 +147,10 @@ if best_student > best_student1:
     print(f'{best_student.name} круче {best_student1.name}')
 else:
     print(f'{best_student1.name} круче {best_student.name}')
+
+students1 = [best_student, best_student1]
+lectors1 = [cool_lecturer, cool_lecturer2]
+cours1 = 'Python'
+
+print(f'Среднее по студентам в рамках курса {cours1} : {srednee_student(students1, cours1)}')
+print(f'Среднее по лекторам в рамках курса {cours1} : {srednee_student(lectors1, cours1)}')
